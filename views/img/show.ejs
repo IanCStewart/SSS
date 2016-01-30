@@ -1,0 +1,93 @@
+<%- include('../partials/head.ejs') %>
+
+<!-- show picture !-->
+<div class="img_block">
+    <h1 class="title"><%= photos[0].title %></h1>
+    <img src="/uploads/<%= photos[0].filename %>" alt="<%= photos[0].filename %>" />
+    <!-- show comments !-->
+    <div id="comments">
+    <%
+    if(comments.length === 0){
+    %>
+        <p class="comment noComment">there are no comments yet be the first to comment</p>
+    <%
+    }else{
+        for(i = 0; i < comments.length; i++){
+    %>
+            <div class="comment">
+                <p class="username"><%= users[i].name %>:</p>
+                <p><%= comments[i].comment %></p>
+                <p class="date"></p>
+                <script>
+                    var date = new Date("<%= comments[i].created_at %>");
+                    
+                    var dd = date.getDate();
+                    var yy = date.getFullYear();
+                    var mm = date.getMonth()+1;
+                    var hh = date.getHours();
+                    var min = date.getMinutes();
+                    
+                    // set year blank if it is this year and day to today if it is today
+                    var today = new Date();
+                    var tdd = today.getDate();
+                    var tmm = today.getMonth()+1;
+                    var tyy = today.getFullYear();
+                    
+                    if(tyy === yy){
+                        yy = "";
+                    }if(tdd === dd && tmm === mm){
+                        dd = "Today";
+                        mm = "";
+                    }if(tdd-1 === dd && tmm === mm){
+                        dd = "Yesterday"
+                        mm = "";
+                    }
+                    
+                    // Set month back to text
+                    if(mm === 1){
+                        mm = "Jan";
+                    } if(mm === 2){
+                        mm = "Feb";
+                    }if(mm === 3){
+                        mm = "Mar";
+                    }if(mm === 4){
+                        mm = "Apr";
+                    }if(mm === 5){
+                        mm = "May";
+                    }if(mm === 6){
+                        mm = "Jun";
+                    }if(mm === 7){
+                        mm = "Jul";
+                    }if(mm === 8){
+                        mm = "Aug";
+                    }if(mm === 9){
+                        mm = "Sept";
+                    }if(mm === 10){
+                        mm = "Oct";
+                    }if(mm === 11){
+                        mm = "Nov";
+                    }if(mm === 12){
+                        mm = "Dec";
+                    }
+                    
+                    // add extra 0 if under 10
+                    if(min < 10){
+                        min = "0"+min;
+                    }
+                    
+                    var theDate = dd + " " + mm + " " + yy + " at " + hh + ":" + min ;
+                    document.getElementsByClassName('date')[<%= i %>].innerHTML = theDate;
+                </script>
+            </div>
+    <%
+        }
+    }
+    %>
+        <form method="post">
+            <label><input type="text" name="comment" id="comment" placeholder="type a comment..."></label>
+            <label><input type="submit" id="submit" name="submit" value="post" /></label>
+        </form>
+    </div>
+</div>
+
+<%- include('../partials/foot.ejs') %>

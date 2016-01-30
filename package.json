@@ -1,0 +1,22 @@
+{
+  "name": "DoSomethingWithPictures",
+  "version": "0.0.1",
+  "private": true,
+  "description": "This awesome script does something.. with pictures.",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "express-myconnection": "^1.0.4",
+    "express-session": "^1.12.1",
+    "multer": "^1.1.0",
+    "mysql": "^2.9.0",
+    "figlet": "^1.1.1",
+    "ascii-art": "^0.0.2-alpha",
+    "bcrypt-nodejs": "^0.0.3",
+    "socket.io": "^1.4.5"
+  },
+  "author": "Ian Stewart <i.c.stewart@icloud.com>",
+  "license": "ISC"
+}

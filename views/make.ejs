@@ -1,0 +1,12 @@
+<%- include('partials/head.ejs') %>
+
+<p class="wrong"><%= message %></p>
+<form action"/" method="post">
+    <label><p>name: </p><input type="text" name="name"  id="name"/></label>
+    <label><p>username: </p><input type="text" name="user" id="user"/></label>
+    <label><p>password: </p><input type="password" name="password" id="password"/></label>
+    <label><p>retype password: </p><input type="password" name="passwordCheck" id="passwordCheck"/></label>
+    <label><input type="submit" id="submit" name="submit" value="create acount!" /></label>
+</form>
+
+<%- include('partials/foot.ejs') %>

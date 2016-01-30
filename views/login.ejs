@@ -1,0 +1,11 @@
+<%- include('partials/head.ejs') %>
+
+<form class="standAlone" method="post">
+    <p class="wrong"><%= message %></p>
+    <label><input type="text" name="user" id="user" placeholder="username"/></label>
+    <label><input type="password" name="password" id="password" placeholder="password"/></label>
+    <label><input type="submit" id="submit" name="submit" value="Login!" /></label>
+    <p id="makeA"><a href="/make" id="make">make an account</a></p>
+</form>
+
+<%- include('partials/foot.ejs') %>

@@ -1,0 +1,22 @@
+<%- include('../partials/head.ejs') %>
+
+<form class="standAlone" method="post" enctype="multipart/form-data">
+    <input type="file" name="upload-file" id="file"/>
+    <label>
+        <p>title: </p>
+        <input  type="text" name="caption" id="caption" placeholder="img title..."></textarea>
+    </label>
+    <label>
+        <p>category: </p>
+        <select name="category" id="category">
+            <option value="1">Animals</option>
+            <option value="2">Memes</option>
+            <option value="3">Random-Pictures</option>
+            <option value="4">Gif</option>
+        </select>
+    </label>
+    <input type="submit"/>
+</form>
+<p><%= message %></p>
+
+<%- include('../partials/foot.ejs') %>

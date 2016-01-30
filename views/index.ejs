@@ -1,0 +1,17 @@
+<%- include('partials/head.ejs') %>
+
+<!-- show pictures here !-->
+<%
+    for(i = 0; i < photos.length; i++){
+%>
+<div class="img_block">
+    <h1 class="title"><%= photos[i].title %></h1>
+    <img src="/uploads/<%= photos[i].filename %>" alt="<%= photos[i].filename %>" />
+    <div class="buttons">
+        <a href="/img/<%= photos[i].id %>"><i class="fa fa-comments"></i><p>comments</p></a>
+        <a href=""><i class="fa fa-share"></i><p>share</p></a>
+    </div>
+</div>
+<% } %>
+
+<%- include('partials/foot.ejs') %>

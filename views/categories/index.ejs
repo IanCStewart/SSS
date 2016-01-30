@@ -1,0 +1,11 @@
+<%- include('../partials/head.ejs') %>
+
+<h1>You're at <%= title %></h1>
+<h2>Here are the categories we have</h2>
+<ul class="categories">
+<% for(var i=0; i<categories.length; i++) { %>
+    <li><a href="/categories/<%= i +1 %>"><%= categories[i].category_name %></a></li>
+<% } %>
+</ul>
+
+<%- include('../partials/foot.ejs') %>
